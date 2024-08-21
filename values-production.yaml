@@ -1,0 +1,14 @@
+namespace: apache-airflow
+helm:
+  chart: charts/  # Relative path to the Helm chart directory
+  releaseName: airflow-instance
+  valuesFiles:
+    - charts/values-production.yaml  # Example path to production values
+targetCustomizations:
+- name: production
+  helm:
+    valuesFiles:
+    - charts/values-production.yaml
+  clusterSelector:
+    matchLabels:
+      env: production

@@ -1,0 +1,14 @@
+namespace: apache-airflow
+helm:
+  chart: charts/airflow
+  releaseName: airflow
+
+targetCustomizations:
+- name: prod
+  helm:
+    releaseName: airflow-release
+    valuesFiles:
+      - values-prod.yaml
+  clusterSelector:
+    matchLabels:
+      env: prod
