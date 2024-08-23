@@ -6,7 +6,7 @@ helm:
 targetCustomizations:
 - name: prod
   helm:
-    releaseName: airflow-release
+    releaseName: airflow
     valuesFiles:
       - values-prod.yaml
   clusterSelector:
