@@ -56,7 +56,7 @@ Originally created in 2017, it has since helped thousands of companies create pr
 ## Key Features
 
 - __Support for Airflow Versions:__ 
-   - [`1.10` | `2.0` | `2.1` | `2.2` | `2.3` | `2.4` | `2.5` | `2.6` | `2.7` | `2.8` | `2.9`](#airflow-version-support)
+   - [`1.10` | `2.0` | `2.1` | `2.2` | `2.3` | `2.4` | `2.5` | `2.6` | `2.7` | `2.8` | `2.9` | `2.10`](#airflow-version-support)
 - __Support for Airflow Executors:__ 
    - [`CeleryExecutor` | `KubernetesExecutor` | `CeleryKubernetesExecutor`](#airflow-executor-support)
 - __Easily Connect with your Database:__
@@ -171,9 +171,13 @@ Chart Version → <br> Airflow Version ↓  | `7.0.0` - `7.16.0` | `8.0.0` - `8.
 `2.7.X` | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️️ | ✔️️
 `2.8.X` | ❌ | ❌ | ❌ | ❌ | ❌ | ✔️️ | ✔️️
 `2.9.X` | ❌ | ❌ | ❌ | ❌ | ❌ | ❌️ | ✔️️
+`2.10.X` | ❌ | ❌ | ❌ | ❌ | ❌ | ❌️ | ⚠️ <sub>[3]</sub>
 
-<sub>[1] you must set `airflow.legacyCommands = true` when using airflow version `1.10.X`</sub><br>
+<sub>[1] you must set `airflow.legacyCommands = true` when using airflow version `1.10.X`</sub>
+<br>
 <sub>[2] the [Deferrable Operators & Triggers](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html) feature won't work, as there is no `airflow triggerer` Deployment</sub>
+<br>
+<sub>[3] airflow version `2.10.1` has a [serious issue](https://github.com/apache/airflow/issues/42111) with git-sync, use `2.10.2` or later</sub>
 
 ## Airflow Executor Support
 
